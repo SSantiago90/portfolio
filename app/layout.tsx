@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { DM_Sans, Lora } from "next/font/google";
+import { Gantari, Lora } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/nav/nav";
 import { ThemeProvider } from "@/components/theme/theme-provider";
@@ -7,9 +7,10 @@ import Background from "@/components/background/background";
 import RightclickMenu from "@/components/ui/rightclick-menu";
 import { UIContextProvider } from "@/storage/UIcontext/UIcontext";
 import HoverFooter from "@/components/hover-footer";
+import NextPageButton from "@/components/nav/next-page-button";
 
 const fontface2 = Lora({ subsets: ["latin"] });
-const fontface = DM_Sans({ subsets: ["latin"] });
+const fontface = Gantari({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Santiago Salkin | Web Dev",
@@ -36,6 +37,7 @@ export default function RootLayout({
                   {children}
                 </main>
                 <HoverFooter />
+                <NextPageButton />
               </ThemeProvider>
             </RightclickMenu>
           </UIContextProvider>

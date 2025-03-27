@@ -7,17 +7,23 @@ export default function TransitionLink({
   href,
   disabled,
   onNavigation,
+  onNavigationEnd,
   ...props
 }: {
   children: React.ReactNode;
   onNavigation?: () => void;
+  onNavigationEnd?: () => void;
   disabled?: boolean;
   href: string;
 }) {
   const router = useRouter();
 
   async function handleNavigation(evt: React.MouseEvent<HTMLAnchorElement>) {
-    if (disabled) return;
+    if (disabled) {
+      evt.preventDefault();
+      evt.stopPropagation();
+      return;
+    }
 
     evt.preventDefault();
     if (onNavigation) onNavigation();
@@ -27,12 +33,29 @@ export default function TransitionLink({
 
     main.classList.add("page-transition-exit");
 
-    await sleep(360);
+    await new Promise((resolve) => {
+      main.addEventListener("animationend", () => resolve(true), {
+        once: true,
+      });
+    });
+
+    await sleep(100);
     router.push(href);
-    await sleep(360);
+
+    await sleep(260);
 
     main.classList.remove("page-transition-exit");
     main.classList.add("page-transition-enter");
+
+    await new Promise((resolve) => {
+      main.addEventListener("animationend", () => resolve(true), {
+        once: true,
+      });
+    });
+
+    main.classList.remove("page-transition-enter");
+
+    if (onNavigationEnd) onNavigationEnd();
   }
 
   return (

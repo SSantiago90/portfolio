@@ -104,7 +104,7 @@ export default function Background() {
     }
   }, [bgEffectsOn]);
 
-  if (!bgEffectsOn) {
+  /*   if (!bgEffectsOn) {
     return (
       <div className="gradient-background">
         <div className="noise-overlay"></div>
@@ -118,19 +118,26 @@ export default function Background() {
         )}
       </div>
     );
-  }
+  } */
 
   return (
     <div className="gradient-background">
-      {theme === "light" && <div className="white-overlay"></div>}
-      <div className="spheres-container animate-appear">
-        <div className="gradient-sphere sphere-1"></div>
-        <div className="gradient-sphere sphere-2"></div>
-        <div className="gradient-sphere sphere-3"></div>
-        <div className="glow"></div>
-        <div className="glow-bottom"></div>
-      </div>
       <div className="noise-overlay"></div>
+      {theme === "dark" && (
+        <div>
+          <div className="grid-overlay"></div>
+        </div>
+      )}
+
+      {bgEffectsOn && (
+        <div className="spheres-container animate-appear">
+          <div className="gradient-sphere sphere-1"></div>
+          <div className="gradient-sphere sphere-2"></div>
+          <div className="gradient-sphere sphere-3"></div>
+          <div className="glow"></div>
+          <div className="glow-bottom"></div>
+        </div>
+      )}
       <div className="grid-overlay"></div>
       <div className="particles-container" id="particles-container"></div>
     </div>

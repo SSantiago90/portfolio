@@ -2,7 +2,10 @@
 
 import { createContext, useContext, useState } from "react";
 
-const UIcontext = createContext<any>(null);
+const UIcontext = createContext<{
+  bgEffectsOn: boolean;
+  toggleBgEffects: () => void;
+}>({ bgEffectsOn: true, toggleBgEffects: () => {} });
 
 export default UIcontext;
 

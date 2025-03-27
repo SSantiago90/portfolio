@@ -1,8 +1,9 @@
 "use client";
 
-import { ChevronsDownUp, ChevronsUpDown } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import sleep from "./util/sleep";
+import Tag from "./ui/tag";
+import { Collapsible, CollapsibleButton } from "./ui/collapsible";
 
 export default function ExperienceDetail({
   item,
@@ -13,6 +14,7 @@ export default function ExperienceDetail({
     company: string;
     dates: string;
     description: string[];
+    tags: Array<{ type: string; color?: string }>;
     link: string;
   };
   order: number;
@@ -32,11 +34,6 @@ export default function ExperienceDetail({
     timer();
   }, [order]);
 
-  const companyClasses = `
-    text-lg font-black uppercase opacity-90 tracking-widest
-          text-gradient-${1 /* (order % 3) + 1 */}
-    `;
-
   return (
     <li
       className="mb-8 animate-fade-in"
@@ -44,42 +41,50 @@ export default function ExperienceDetail({
     >
       <div className="flex justify-between items-center">
         <h2 className="text-2xl font-bold">{item.title}</h2>
-        <button
-          className="text-sm font-semibold text-mainAccent"
-          onClick={() => setCollapsed(!collapsed)}
-        >
-          {!collapsed ? (
-            <ChevronsDownUp className="opacity-80" />
-          ) : (
-            <ChevronsUpDown />
-          )}
-        </button>
+        <CollapsibleButton
+          onCollapse={() => setCollapsed(!collapsed)}
+          collapsed={collapsed}
+          className="dark:text-blue-400 text-blue-600"
+        ></CollapsibleButton>
       </div>
-      <div className="mb-5 animate-show">
+
+      <div className="animate-show">
         <a href={item.link} target="_blank" rel="noopener noreferrer">
-          <span className={companyClasses}>{item.company}</span>
+          <span className="text-lg font-black uppercase opacity-90 tracking-widest dark:text-blue-400 text-blue-600">
+            {item.company}
+          </span>
         </a>
         <p className="text-sm font-semibold font-secondary opacity-40">
           {item.dates}
         </p>
       </div>
-      {!collapsed && (
-        <ul className="list-disc pl-6 mt-4 max-w-[720px]  font-secondary">
-          {item.description.map((desc, index) => (
-            <li
-              key={index}
-              className="font-light mb-2 text-sm text-zinc-600 dark:text-zinc-300 animate-show"
-              style={{
-                animationDelay: initialLoad.current
-                  ? `${(order + 1) * 500 + index * 300}ms`
-                  : `${index * 140}ms`,
-              }}
-            >
-              {desc}
-            </li>
-          ))}
-        </ul>
-      )}
+
+      <Collapsible collapsed={collapsed}>
+        <div>
+          <ul className="list-disc pl-6 mt-6 max-w-[720px] font-secondary">
+            {item.description.map((desc, index) => (
+              <li
+                key={index}
+                className="font-light mb-2 text-sm text-zinc-600 dark:text-zinc-300 animate-show"
+                style={{
+                  animationDelay: initialLoad.current
+                    ? `${(order + 1) * 500 + index * 300}ms`
+                    : `${index * 140}ms`,
+                }}
+              >
+                {desc}
+              </li>
+            ))}
+          </ul>
+          <div className="mt-8 flex gap-2 max-w-[420px] flex-wrap">
+            {item.tags.map((tag, index) => (
+              <Tag key={index} variant="base">
+                {`+ ${tag.type}`}
+              </Tag>
+            ))}
+          </div>
+        </div>
+      </Collapsible>
     </li>
   );
 }

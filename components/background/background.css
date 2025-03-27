@@ -10,6 +10,7 @@
   height: 100%;
   z-index: -1;
   overflow: hidden;
+  /* transform: rotateY(180deg); */
 }
 
 .gradient-sphere {
@@ -35,10 +36,48 @@
 }
 
 .sphere-2 {
+  width: 45vw;
+  height: 45vw;
+  background: linear-gradient(
+    -55deg,
+    rgba(255, 205, 213, 0.938),
+    rgba(240, 158, 172, 0.65),
+    rgba(255, 93, 174, 0.5),
+    rgba(255, 105, 180, 0.28),
+    rgba(179, 95, 137, 0),
+    rgba(179, 95, 137, 0.12),
+    rgba(255, 3, 179, 0.349),
+    rgba(0, 0, 0, 0)
+  );
+  bottom: -10%;
+  right: -15%;
+  filter: blur(50px);
+  animation: float-2 10s ease-in-out infinite alternate;
+}
+
+.sphere-1-alt {
+  width: 42vw;
+  height: 42vw;
+  background: radial-gradient(
+    rgb(87, 139, 254),
+    rgba(87, 139, 254, 0.45),
+    rgba(87, 139, 254, 0.27),
+    rgba(87, 139, 254, 0.22),
+    rgba(87, 139, 254, 0.15),
+    rgba(0, 0, 0, 0)
+  );
+  transform: rotate(180deg);
+  bottom: -10%;
+  right: -12%;
+  animation: float-1 6s ease-in-out infinite alternate;
+}
+
+.sphere-2-alt {
   width: 50vw;
   height: 50vw;
   background: linear-gradient(
     -40deg,
+
     rgba(255, 205, 213, 0.938),
     rgba(240, 158, 172, 0.65),
     rgba(255, 93, 174, 0.5),
@@ -48,8 +87,8 @@
     rgba(255, 3, 192, 0.349),
     rgba(0, 0, 0, 0)
   );
-  bottom: -10%;
-  right: -25%;
+  top: -15%;
+  left: -20%;
   animation: float-2 15s ease-in-out infinite alternate;
 }
 
@@ -240,7 +279,7 @@
 }
 
 .animate-appear {
-  animation: appear 3.2s cubic-bezier(0.47, 0, 0.745, 0.715);
+  animation: appear 2s cubic-bezier(0.47, 0, 0.745, 0.715);
 }
 
 .particles-container {
@@ -271,7 +310,7 @@
 
 .particle {
   position: absolute;
-  background: white;
+  background: rgb(255, 255, 255);
   border-radius: 50%;
   opacity: 0;
   pointer-events: none;

@@ -16,7 +16,7 @@ export default function HoverFooter() {
             {"Created by "}
             <span className="dark:text-white text-black">Salkin Santiago</span>
             {" | Software Developer "}| Copyright &copy;{" "}
-            {new Date().getFullYear()} | Licensed under{" "}
+            {new Date().getFullYear()}| Licensed under{" "}
             <a
               className="dark:text-white text-black"
               href="https://github.com/sansalkin/personal-website/blob/main/LICENSE"

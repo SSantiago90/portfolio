@@ -10,7 +10,7 @@ export default {
     extend: {
       colors: {
         main: '#eeefe9',
-        mainAccent: '#e369aC',
+        mainAccent: '#bf58b5',
         overlay: 'rgba(0,0,0,0.8)',
 
         // light mode
