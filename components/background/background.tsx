@@ -5,6 +5,10 @@ import "./background.css";
 import { useUiContext } from "@/storage/UIcontext/UIcontext";
 import { useTheme } from "next-themes";
 
+type Particle = HTMLDivElement & {
+  style: CSSStyleDeclaration;
+};
+
 export default function Background() {
   const { bgEffectsOn } = useUiContext();
   const { theme } = useTheme();
@@ -27,7 +31,7 @@ export default function Background() {
     }
 
     function createParticle() {
-      const particle = document.createElement("div");
+      const particle = document.createElement("div") as Particle;
       particle.className = "particle";
 
       const size =
@@ -55,13 +59,13 @@ export default function Background() {
       // Initial position
       resetParticle(particle);
 
-      particlesContainer.appendChild(particle);
+      particlesContainer?.appendChild(particle);
 
       // Animate
       animateParticle(particle);
     }
 
-    function resetParticle(particle) {
+    function resetParticle(particle: Particle) {
       // Random position
       const posX = Math.random() * 100;
       const posY = Math.random() * 100;
@@ -76,7 +80,7 @@ export default function Background() {
       };
     }
 
-    function animateParticle(particle) {
+    function animateParticle(particle: Particle) {
       // Initial position
       const pos = resetParticle(particle);
 
@@ -87,7 +91,7 @@ export default function Background() {
       // Animate with GSAP-like timing
       setTimeout(() => {
         particle.style.transition = `all ${duration}s linear`;
-        particle.style.opacity = Math.random() * 0.3 + 0.1;
+        particle.style.opacity = String(Math.random() * 0.3 + 0.1);
 
         // Move in a slight direction
         const moveX = pos.x + (Math.random() * 20 - 10);
@@ -103,22 +107,6 @@ export default function Background() {
       }, delay * 1000);
     }
   }, [bgEffectsOn]);
-
-  /*   if (!bgEffectsOn) {
-    return (
-      <div className="gradient-background">
-        <div className="noise-overlay"></div>
-        <div className="grid-overlay"></div>
-        {theme === "dark" && (
-          <>
-            <div className="noise-overlay"></div>
-
-            <div className="grid-overlay"></div>
-          </>
-        )}
-      </div>
-    );
-  } */
 
   return (
     <div className="gradient-background">
