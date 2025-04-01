@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import { Gantari, Lora } from "next/font/google";
+import { ThemeProvider } from "@/components/theme/theme-provider";
+import { UIContextProvider } from "@/storage/UIcontext/UIcontext";
 import "./globals.css";
 import Nav from "@/components/nav/nav";
-import { ThemeProvider } from "@/components/theme/theme-provider";
 import Background from "@/components/background/background";
 import RightclickMenu from "@/components/ui/rightclick-menu";
-import { UIContextProvider } from "@/storage/UIcontext/UIcontext";
 import HoverFooter from "@/components/hover-footer";
 import NextPageButton from "@/components/nav/next-page-button";
 

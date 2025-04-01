@@ -8,5 +8,9 @@ export function ThemeProvider({
 }: {
   children: React.ReactNode;
 }) {
-  return <NextThemesProvider {...props}>{children}</NextThemesProvider>;
+  return (
+    <NextThemesProvider attribute="class" defaultTheme="dark" {...props}>
+      {children}
+    </NextThemesProvider>
+  );
 }
