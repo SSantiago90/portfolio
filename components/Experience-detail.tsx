@@ -12,10 +12,10 @@ export default function ExperienceDetail({
   item: {
     title: string;
     company: string;
-    dates: string;
+    dates?: string;
     description: string[];
     tags: Array<{ type: string; color?: string }>;
-    link: string;
+    link?: string;
   };
   order: number;
 }) {
