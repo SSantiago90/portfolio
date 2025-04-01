@@ -37,7 +37,7 @@ export default function AboutMe() {
           <strong>Hi!</strong> I&apos;m a frontend focused web developer with
           fullstack and blockchain experience. Passionate about building clean,
           efficient interfaces while leveraging backend knowledge. Committed to
-          attention to detail, efficient coding, creative problem-solving, and
+          efficient coding, attention to detail, creative problem-solving, and
           effective teamwork
           <br />
           Enthusiastic teacher and every day learner. <br />
