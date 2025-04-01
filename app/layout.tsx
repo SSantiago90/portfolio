@@ -26,7 +26,7 @@ export default function RootLayout({
       <html lang="en">
         <body className={`${fontface2.className} ${fontface.className} `}>
           <UIContextProvider>
-            <ThemeProvider attribute="class">
+            <ThemeProvider>
               <RightclickMenu>
                 <Background />
                 <Nav />
