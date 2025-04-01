@@ -109,8 +109,7 @@ document.addEventListener('mousemove', (e) => {
     const moveX = (e.clientX / window.innerWidth - 0.5) * 5;
     const moveY = (e.clientY / window.innerHeight - 0.5) * 5;
     
-    spheres.forEach(sphere => {
-        const currentTransform = getComputedStyle(sphere).transform;
+    spheres.forEach(sphere => {        
         sphere.style.transform = `translate(${moveX}px, ${moveY}px)`;
     });
 });

@@ -6,7 +6,6 @@ import { Button } from "../ui/button";
 import { SiGithub } from "@icons-pack/react-simple-icons";
 import { Link as LinkIcon } from "lucide-react";
 import Image from "next/image";
-import Divider from "../ui/divider";
 import { Collapsible, CollapsibleButton } from "../ui/collapsible";
 
 export default function ProjectDetail({
