@@ -1,22 +1,5 @@
 const projects = [
   {
-    title: "Portfolio",
-    type: "This Website!",
-    company: "Me",
-    url: "/",
-    github: "https://github.com/SSantiago90/",
-    img: "/img/work/portfolio.gif",
-    description: [
-      "Personal website",
-    ],
-    tags: [
-      { type: "NextJS", color: "#555555" },
-      { type: "React", color: "#4f92ff" },
-      { type: "Typescript", color: "#2E5083" },
-      { type: "Tailwind", color: "#0D7377" },
-    ],
-  },
-  {
     title: "DailyDo - Tasks manager App",
     type: "Personal Project - Work in progress",
     company: "Personal Project",
@@ -24,15 +7,16 @@ const projects = [
     github: "https://github.com/SSantiago90/dailydo-react",
     img: "/img/work/daily-react.gif",
     description: [
-      "Conducted live virtual bootcamp courses on React, training students to develop e-commerce projects using React.",
-      "Taught foundational concepts (state, lifecycle, components) and advanced topics (context, reconciliation algorithm"
+      "A classic Todo app built with React and Typescript",
+      "Responsive design, theme selection, and animations thanks to Tailwind",
+      "Session handling using JWT",
+      "Some features are being worked on and some others comming soon"
     ],
     tags: [      
       { type: "WIP", color: "#ffb347" },
       { type: "React", color: "#4f92ff" }, 
       { type: "Typescript", color: "#2E5083" },
       { type: "Tailwind", color: "#0D7377" },
-      { type: "Motion", color: "#b2ab30" },
     ],
   },
   {
@@ -43,13 +27,15 @@ const projects = [
     github: "https://github.com/SSantiago90/dailydo-nest",
     img: "/img/work/nest-api.webp",
     description: [
-      "Conducted live virtual bootcamp courses on React, training students to develop e-commerce projects using React.",
-      "Taught foundational concepts (state, lifecycle, components) and advanced topics (context, reconciliation algorithm"
+      "A RESTful API built with NestJS, Typescript, and MongoDB",
+      "It features basic CRUD operations for managing the frontend app requests for tasks",
+      "Includes user management: account register and login, JWT authentication, password encryption, and roles management."
     ],
     tags: [
       { type: "Node", color: "#02a47a" },
       { type: "Nest", color: "#aB4252" },
       { type: "Typescript", color: "#2E5083" },
+      { type: "JWT", color: "#dc2088" },
       { type: "Express", color: "#7ba00a" },
       { type: "MongoDB", color: "#3b730a" },
     ],
@@ -62,8 +48,8 @@ const projects = [
     github: "https://github.com/SSantiago90/CoderStore-React",
     img: "/img/work/coder-react.gif",
     description: [
-      "Conducted live virtual bootcamp courses on React, training students to develop e-commerce projects using React.",
-      "Taught foundational concepts (state, lifecycle, components) and advanced topics (context, reconciliation algorithm"
+      "A sample ecommerce website built with React.",
+      "It features cart mangagement with Redux and Firebase/Firestore as a cloud database."
     ],
     tags: [
       { type: "React", color: "#4f92ff" },
@@ -73,9 +59,25 @@ const projects = [
       { type: "Tailwind", color: "#0D7377" },
     ],
   },
-
+  
+  {
+    title: "Portfolio",
+    type: "This Website!",
+    company: "Me",
+    url: "/",
+    github: "https://github.com/SSantiago90",
+    img: "/img/work/portfolio.gif",
+    description: [
+      "Personal website. Hope you enjoy it in here!",
+    ],
+    tags: [
+      { type: "NextJS", color: "#555555" },
+      { type: "React", color: "#4f92ff" },
+      { type: "Typescript", color: "#2E5083" },
+      { type: "Tailwind", color: "#0D7377" },
+    ],
+  },
 ]
 
 export default projects;
-
 

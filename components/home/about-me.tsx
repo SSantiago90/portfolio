@@ -2,6 +2,7 @@ import SocialLinks from "@/components/nav/social-link";
 import Divider from "../ui/divider";
 import ProfileImg from "./profile-image";
 import ContactForm from "./contact-form";
+import { File } from "lucide-react";
 
 export default function AboutMe() {
   return (
@@ -30,21 +31,42 @@ export default function AboutMe() {
           animated={true}
         />
         <p
-          className="w-[720px] animate-show"
+          className="md:w-[540px] sm:w-[468px] animate-show"
           style={{ animationDelay: "880ms" }}
         >
-          <strong>Hi!</strong> I&apos;m a Front-end web developer with a solid
-          foundation in full-stack development, experienced in backend and
-          blockchain technology.
+          <strong>Hi!</strong> I&apos;m a frontend focused web developer with
+          fullstack and blockchain experience. Passionate about building clean,
+          efficient interfaces while leveraging backend knowledge. Committed to
+          attention to detail, efficient coding, creative problem-solving, and
+          effective teamwork
+          <br />
+          Enthusiastic teacher and every day learner. <br />
+        </p>
+        <br></br>
+        <p className="text-sm font-main animate-show delay-1000">
+          <a
+            href="/files/Resume_Salkin_Santiago-2025.pdf"
+            download
+            className="hover:decoration-white decoration-white text-gradient-hover hover:underline decoration-dashed underline-offset-2 cursor-pointer"
+          >
+            <strong>Download</strong> resume here{" "}
+            <File className="inline" size={16} />
+          </a>
         </p>
 
-        <br />
         <div
-          className="animate-show sm:w-[468px] w-[392px]"
-          style={{ animationDelay: "1100ms" }}
+          className="animate-show md:mt-16 mt-6 sm:w-[468px] w-[392px]"
+          style={{ animationDelay: "1500ms" }}
         >
-          <div className="font-main animate-show">
-            Get in touch!
+          <Divider
+            className="animate-show delay-500 sm:w-[468px] w-[392px]"
+            animated={true}
+            style={{ animationDirection: "both", opacity: 0.25 }}
+          />
+          <div className="font-main animate-show text-sm">
+            <p className="mt-1 mb-4">
+              <i>Get in touch!</i>
+            </p>
             <SocialLinks />
           </div>
           <div className="mt-6">

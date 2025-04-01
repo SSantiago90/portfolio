@@ -12,26 +12,36 @@ import {
   DialogTrigger,
   DialogClose,
 } from "@/components/ui/dialog";
-import { Pencil, PencilLineIcon } from "lucide-react";
+import { Pencil, Send } from "lucide-react";
+import { useState } from "react";
 
 export default function ContactForm() {
   const [state, handleSubmit] = useForm("xkgjzdpn");
+  const [isHover, setIsHover] = useState(false);
 
   return (
     <Dialog>
-      <div className="flex items-center gap-1 flex-wrap">
+      <div className="flex items-center gap-1 flex-wrap py-2">
         <p className="text-md font-main">Or you can </p>
-        <DialogTrigger asChild className="flex items-center gap-1">
-          <p className="text-md font-main">
-            <span className="underline underline-offset-2 cursor-pointer hover:text-mainAccent">
-              {" leave me a message here "}
-              <PencilLineIcon className="inline" size={20} />
-            </span>
+        <DialogTrigger
+          onMouseEnter={() => setIsHover(true)}
+          onMouseLeave={() => setIsHover(false)}
+          asChild
+          className="flex items-center gap-1  text-gradient-hover"
+        >
+          <p
+            className={`text-md font-main dark:decoration-white  dark:hover:decoration-white hover:underline decoration-dashed underline-offset-8 cursor-pointer`}
+          >
+            <strong>text me right here!</strong>
+            <Pencil
+              style={{ visibility: isHover ? "visible" : "hidden" }}
+              size={26}
+            />
           </p>
         </DialogTrigger>
       </div>
 
-      <DialogContent className="sm:max-w-[425px] md:max-w-[600px] font-main backdrop:blur-sm dark:bg-black/30">
+      <DialogContent className="sm:max-w-[425px] md:max-w-[600px] font-main backdrop:blur-sm dark:bg-black/70 bg-zinc-100">
         {state.succeeded ? (
           <DialogHeader>
             <DialogTitle className="text-xl">
@@ -55,27 +65,30 @@ export default function ContactForm() {
                   Email
                 </label>
                 <input
+                  required
                   id="mail"
                   name="mail"
-                  placeholder="jon@mail.xyz"
-                  className="col-span-3 px-2 py-1"
+                  type="email"
+                  placeholder="jon@doe"
+                  className="col-span-3 px-2 py-1 dark:bg-zinc-800"
                 />
                 <ValidationError
                   prefix="Email"
-                  field="email"
+                  field="mail"
                   errors={state.errors}
                 />
               </div>
 
-              <div className="grid grid-cols-4 items-center gap-4">
+              <div className="grid grid-cols-4 items-center gap-4 text-md">
                 <label htmlFor="message" className="text-right">
                   Message
                 </label>
                 <textarea
+                  required
                   id="message"
                   name="message"
-                  placeholder="Hey there. I Love your work, let's work together!..."
-                  className="col-span-3 px-2 py-1"
+                  placeholder="Hi! I Love your work, let's create something together!..."
+                  className="col-span-3 px-2 py-1 min-h-24 dark:bg-zinc-800"
                 />
                 <ValidationError
                   prefix="Message"
@@ -84,16 +97,17 @@ export default function ContactForm() {
                 />
               </div>
               <DialogFooter>
-                <Button type="submit" className="mr-2">
-                  Send
-                </Button>
                 <DialogClose asChild>
                   <Button type="button" variant="secondary">
                     Close
                   </Button>
                 </DialogClose>
+                <Button type="submit" className="mr-2">
+                  Send <Send size={20} />
+                </Button>
               </DialogFooter>
             </form>
+            <ValidationError errors={state.errors} />
           </>
         )}
       </DialogContent>

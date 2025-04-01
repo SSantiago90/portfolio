@@ -1,13 +1,6 @@
 "use client";
 
-import { usePathname } from "next/navigation";
-
 export default function HoverFooter() {
-  const path = usePathname();
-  console.log(path);
-
-  /* if (path === "/") return <></>; */
-
   return (
     <div>
       <div className="relative">

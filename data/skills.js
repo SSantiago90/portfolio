@@ -13,14 +13,21 @@ const skills = {
     { type: "Nest", color: "#aB4252" },
     { type: "Express", color: "#7ba00a" },
     { type: "MongoDB", color: "#3b730a" },
+    { type: "JWT", color: "#dc2088" },
   ],
-  "cloud & others": [
-    { type: "Firebase", color: "#cb7912" },
+  "others": [
+    { type: "Git" , color: "#f1502f" },
+    { type: "Firebase", color: "#cb9812" },
+    { type: "React Query", color: "#db4902" },
     { type: "Docker", color: "#0db7ed" },
-    { type: "Tanstack Query", color: "#db4902" },
+  ],
+  design: [
+    { type: "Photoshop", color: "#25376b" },
+    { type: "Illustrator", color: "#dcb709" },
+    { type: "After Effects", color: "#bc0078" },    
+    { type: "Figma", color: "#Ca6e7e" },
   ],
   languages: [ { type: "Spanish - Native", color: "#555" }, { type: "English - C1", color: "#555" }
-
   ]
   
 };

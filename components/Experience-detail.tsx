@@ -50,7 +50,7 @@ export default function ExperienceDetail({
 
       <div className="animate-show">
         <a href={item.link} target="_blank" rel="noopener noreferrer">
-          <span className="text-lg font-black uppercase opacity-90 tracking-widest dark:text-blue-400 text-blue-600">
+          <span className="text-lg font-black uppercase opacity-90 tracking-widest dark:text-blue-400 text-blue-600 hover:underline underline-offset-2">
             {item.company}
           </span>
         </a>
@@ -77,8 +77,8 @@ export default function ExperienceDetail({
             ))}
           </ul>
           <div className="mt-8 flex gap-2 max-w-[420px] flex-wrap">
-            {item.tags.map((tag, index) => (
-              <Tag key={index} variant="base">
+            {item.tags.map((tag) => (
+              <Tag key={tag.type} variant="base">
                 {`+ ${tag.type}`}
               </Tag>
             ))}

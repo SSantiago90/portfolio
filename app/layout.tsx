@@ -26,20 +26,20 @@ export default function RootLayout({
       <html lang="en">
         <body className={`${fontface2.className} ${fontface.className} `}>
           <UIContextProvider>
-            <RightclickMenu>
-              <ThemeProvider attribute="class" defaultTheme="dark">
+            <ThemeProvider attribute="class">
+              <RightclickMenu>
                 <Background />
                 <Nav />
                 <main
                   id="content"
-                  className="text-text dark:text-darkText mx-auto w-[920px] max-w-full px-5 pb-10 pt-28 mt-16"
+                  className="text-text dark:text-darkText mx-auto w-[920px] max-w-full px-5 pb-10 pt-28 mt-16 mb-24"
                 >
                   {children}
                 </main>
                 <HoverFooter />
                 <NextPageButton />
-              </ThemeProvider>
-            </RightclickMenu>
+              </RightclickMenu>
+            </ThemeProvider>
           </UIContextProvider>
         </body>
       </html>

@@ -9,7 +9,7 @@ export default function ExperiencePage() {
       <SectionTitle>Experience</SectionTitle>
       <ul className="list-none m-0 p-0">
         {experience.map((item, index) => (
-          <div key={index}>
+          <div key={item.title}>
             <ExperienceDetail item={item} order={index} />
             {experience.length - 1 !== index && (
               <Divider

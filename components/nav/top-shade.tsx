@@ -10,8 +10,8 @@ export default function TopShade({
       style={{
         boxShadow: `${
           theme !== "light"
-            ? "0px 50px 100px 50px rgba(10,10,10,0.8)"
-            : "0px 80px 100px 80px rgba(235,235,235,235.35)"
+            ? "0px 80px 100px 80px rgba(10,10,10,1)"
+            : "0px 80px 100px 80px rgba(235,235,235,0.45)"
         }`,
         zIndex: "3",
         top: isHidden ? "-200px" : "-50px",

@@ -46,6 +46,7 @@ export default function Nav() {
 
   const createLinkClasses = (link: { path: string; text: string }) => {
     return clsx(
+      "transition-all duration-800 ease-in-out",
       "hover:border-border dark:hover:border-white rounded-base border-2 px-2 py-1 transition-colors",
       link.path === activePath
         ? "border-border dark:border-white"
@@ -59,10 +60,6 @@ export default function Nav() {
     "dark:border-white dark:text-white mx-auto flex w-max",
     "gap-5 rounded-base p-2.5 px-5 text-sm font-base sm:text-base w450:gap-4"
   );
-
-  const isWindowOnTop = () => {
-    return window.scrollY === 0;
-  };
 
   async function onNavigation(href: string) {
     setActivePath(href);
@@ -105,10 +102,7 @@ export default function Nav() {
 
   return (
     <>
-      <TopShade
-        theme={theme}
-        isHidden={theme !== "light" ? isWindowOnTop() : !mouseOnTop}
-      />
+      <TopShade theme={theme} isHidden={!mouseOnTop} />
       <div
         className="fixed text-center top-0 z-50 w-full transition-transform duration-300 uppercase tracking-widest"
         style={{

@@ -145,6 +145,14 @@ main {
   -webkit-text-fill-color: transparent;
 }
 
+.text-gradient-hover:hover {
+  background: -webkit-linear-gradient(65deg, #725add, #cf5bda, #e45ea1);
+  background-size: 100% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .text-gradient-1 {
   background: -webkit-linear-gradient(65deg, #725add, #cf5bda, #e45ea1);
   background-size: 100% 100%;

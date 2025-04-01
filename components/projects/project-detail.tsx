@@ -85,7 +85,7 @@ export default function ProjectDetail({
             <ul className="list-disc pl-6 mt-4 max-w-[520px] font-secondary">
               {item.description.map((desc, index) => (
                 <li
-                  key={index}
+                  key={desc.toString().slice(0, 10)}
                   className="font-light mb-2 text-sm text-zinc-600 dark:text-zinc-300 animate-show"
                   style={{
                     animationDelay: initialLoad.current
@@ -98,8 +98,8 @@ export default function ProjectDetail({
               ))}
             </ul>
             <div className="mt-8 flex gap-2 max-w-[420px] flex-wrap">
-              {item.tags.map((tag, index) => (
-                <Tag key={index} color={tag.color} type="slashed">
+              {item.tags.map((tag) => (
+                <Tag key={tag.type} color={tag.color} type="slashed">
                   {tag.type}
                 </Tag>
               ))}
@@ -133,11 +133,6 @@ export default function ProjectDetail({
           </div>
         </div>
       </Collapsible>
-      <Divider
-        className="mt-4 py-0"
-        animated
-        style={{ animationDelay: `${(order + 1) * 600}ms` }}
-      />
     </li>
   );
 }

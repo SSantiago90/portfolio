@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
 const UIcontext = createContext<{
   bgEffectsOn: boolean;
@@ -10,9 +10,16 @@ const UIcontext = createContext<{
 export default UIcontext;
 
 export function UIContextProvider({ children }: { children: React.ReactNode }) {
-  const [bgEffectsOn, setBgEffectsOn] = useState(true);
+  const [bgEffectsOn, setBgEffectsOn] = useState<boolean>(false);
+
+  useEffect(() => {
+    const bgEffectsOn = window.localStorage.getItem("bgEffectsOn") === "true";
+    setBgEffectsOn(bgEffectsOn);
+  }, []);
+
   const toggleBgEffects = () => {
     setBgEffectsOn(!bgEffectsOn);
+    window.localStorage.setItem("bgEffectsOn", (!bgEffectsOn).toString());
   };
 
   const value = { bgEffectsOn, toggleBgEffects };

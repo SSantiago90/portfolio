@@ -8,12 +8,14 @@ export default function TransitionLink({
   disabled,
   onNavigation,
   onNavigationEnd,
+  className,
   ...props
 }: {
   children: React.ReactNode;
   onNavigation?: () => void;
   onNavigationEnd?: () => void;
   disabled?: boolean;
+  className?: string;
   href: string;
 }) {
   const router = useRouter();
@@ -39,7 +41,7 @@ export default function TransitionLink({
       });
     });
 
-    await sleep(100);
+    await sleep(260);
     router.push(href);
 
     await sleep(260);
@@ -59,7 +61,12 @@ export default function TransitionLink({
   }
 
   return (
-    <Link onClick={handleNavigation} href={href} {...props}>
+    <Link
+      onClick={handleNavigation}
+      href={href}
+      className={className}
+      {...props}
+    >
       {children}
     </Link>
   );
