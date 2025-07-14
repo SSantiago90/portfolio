@@ -1,12 +1,48 @@
 const projects = [
   {
+      title: "Aegis - Inventory Management App",
+    type: "Personal Project - Work in progress",
+    company: "Personal Project",
+    url: " https://aegis-inventory-react.vercel.app/",
+    github: [{
+      url: "https://github.com/SSantiago90/aegis-inventory-react",
+      label: "Front End"
+    }, 
+      {
+        url: "https://github.com/SSantiago90/aegis-inventory",
+        label: "Back End"
+      }],
+    img: "/img/work/aegis-app.gif",
+    description: [
+      "Minimalistic React App for inventory management",      
+      "User session handling using JWT",      
+      "Backend RESTful API built with NestJS, Typescript, and SQL database",
+      "Full testing suite with JEST and Supertest"
+    ],
+    tags: [      
+      { type: "WIP", color: "#ffb347" },
+      { type: "React", color: "#4f92ff" }, 
+      { type: "Typescript", color: "#2E5083" },
+      { type: "Jest", color: "#8D7317" },
+      { type: "Node", color: "#02a47a" },
+      { type: "Nest", color: "#aB4252" },
+      { type: "Typescript", color: "#2E5083" },
+      { type: "JWT", color: "#dc2088" },
+      { type: "SQL", color: "#2b7aca" },
+    ],   
+  },
+  {
     title: "DailyDo - Tasks manager App",
     type: "Personal Project - Work in progress",
     company: "Personal Project",
-    url: "https://dailydo-react.vercel.app",
-    github: "https://github.com/SSantiago90/dailydo-react",
+    url: "https://dailydo-react.vercel.app",    
+    github: [{
+      url: "https://github.com/SSantiago90/dailydo-react",
+      label: "Front End"
+    }],
     img: "/img/work/daily-react.gif",
     description: [
+      "Backend could be sleeping if app wasn't active for a while - retry login after a couple of minutes",
       "A classic Todo app built with React and Typescript",
       "Responsive design, theme selection, and animations thanks to Tailwind",
       "Session handling using JWT",
@@ -23,9 +59,12 @@ const projects = [
     title: "DailyDo - NEST API",
     type: "NestJS API",
     company: "Personal Project",
-    url: "https://dailydo-nest.onrender.com/api",
-    github: "https://github.com/SSantiago90/dailydo-nest",
-    img: "/img/work/nest-api.webp",
+    url: "https://dailydo-nest.onrender.com/api",    
+    github: [{
+      url: "https://github.com/SSantiago90/dailydo-nest",
+      label: "Back End"
+    }],
+    img: "/img/work/aegis-app.webp",
     description: [
       "A RESTful API built with NestJS, Typescript, and MongoDB",
       "It features basic CRUD operations for managing the frontend app requests for tasks",
@@ -44,8 +83,11 @@ const projects = [
     title: "Sample React Ecommerce",
     type: "Bootcamp Project - Coderhouse",
     company: "Coderhouse",
-    url: "https://coderstore.netlify.app/",
-    github: "https://github.com/SSantiago90/CoderStore-React",
+    url: "https://coderstore.netlify.app/",    
+    github: [{
+      url: "https://github.com/SSantiago90/CoderStore-React",
+      label: "Front End"
+    }],
     img: "/img/work/coder-react.gif",
     description: [
       "A sample ecommerce website built with React.",
@@ -64,8 +106,11 @@ const projects = [
     title: "Portfolio",
     type: "This Website!",
     company: "Me",
-    url: "/",
-    github: "https://github.com/SSantiago90",
+    url: "/",    
+    github: [{
+      url: "https://github.com/SSantiago90",
+      label: "Front End"
+    }],
     img: "/img/work/portfolio.gif",
     description: [
       "Personal website. Hope you enjoy it in here!",
@@ -80,4 +125,3 @@ const projects = [
 ]
 
 export default projects;
-

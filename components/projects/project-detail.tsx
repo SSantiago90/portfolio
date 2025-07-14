@@ -18,7 +18,7 @@ export default function ProjectDetail({
     description: string[];
     tags: Array<{ type: string; color: string }>;
     type: string;
-    github: string;
+    github: Array<{url: string, label: string}>;
     url?: string;
     img: string;
   };
@@ -104,17 +104,38 @@ export default function ProjectDetail({
               ))}
             </div>
             <div className="mt-10 flex align-middle gap-4 animate-show">
-              <a
-                href={item.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm font-semibold"
-              >
-                <Button variant="outlined">
-                  <SiGithub />
-                  Github
-                </Button>
-              </a>
+              {
+                item.github.length > 1 
+                  ? item.github.map( 
+                  (repo) => <>
+                    <a
+                  href={repo.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm font-semibold"
+                    >
+                      <Button variant="outlined">
+                        <SiGithub />
+                        {repo.label}
+                      </Button>
+                    </a>
+                  </>                
+                )
+                :    
+                <a
+                  href={item.github.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm font-semibold"
+                >
+                  <Button variant="outlined">
+                    <SiGithub />
+                    Github
+                  </Button>
+                </a>
+            }
+
+
               {item.url && (
                 <a
                   href={item.url}
