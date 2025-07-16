@@ -123,7 +123,7 @@ export default function ProjectDetail({
                 )
                 :    
                 <a
-                  href={item.github.url}
+                  href={item.github[0].url}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-sm font-semibold"

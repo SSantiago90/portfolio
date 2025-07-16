@@ -26,7 +26,6 @@ const projects = [
       { type: "Jest", color: "#8D7317" },
       { type: "Node", color: "#02a47a" },
       { type: "Nest", color: "#aB4252" },
-      { type: "Typescript", color: "#2E5083" },
       { type: "JWT", color: "#dc2088" },
       { type: "SQL", color: "#2b7aca" },
     ],   
